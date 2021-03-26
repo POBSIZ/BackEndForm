@@ -3,32 +3,31 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/css/board/boardList.css' %}">
 <div class="container__board">
-
     <div class="TITLE">
         BOARD LIST
     </div>
 
     <div class="boardList__wrapper">
         <ul class="boardList">
-
-            <a class="boardList--link" href="{% url 'board:boardDetail' %}">
-                <li class="boardList__itm">
-                    <div class="boardList__itm userInfo">
-                        <div class="boardList__itm userInfo--name">USER</div>
-                        <div class="boardList__itm userInfo--category">STUDY</div>
-                        <div class="boardList__itm userInfo--time"> | 2021.03.21</div>
-                    </div>
-                    <div class="boardList__itm textInfo">
-                        <div class="boardList__itm textInfo--title">
-                            Lorem Ipsum
+            {% for board in boardList %}
+                <a class="boardList--link" href="/board/boardDetail/{{ board.id }}">
+                    <li class="boardList__itm">
+                        <div class="boardList__itm userInfo">
+                            <div class="boardList__itm userInfo--name">{{ board.writer }}</div>
+                            <div class="boardList__itm userInfo--category">{{ board.id }}</div>
+                            <div class="boardList__itm userInfo--time"> | {{ board.created_at }}</div>
                         </div>
-                        <div class="boardList__itm textInfo--text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus in ipsum in varius. Donec id varius ante, sed imperdiet leo. Praesent facilisis eu est in facilisis. Nunc vitae metus leo.
+                        <div class="boardList__itm textInfo">
+                            <div class="boardList__itm textInfo--title">
+                                {{ board.title }}
+                            </div>
+                            <div class="boardList__itm textInfo--text">
+                                {{ board.contents }}
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </a>
-
+                    </li>
+                </a>
+            {% endfor %}
         </ul>
     </div>
 

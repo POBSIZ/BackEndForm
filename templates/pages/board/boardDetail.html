@@ -10,17 +10,17 @@
 
                 <div class="content__header">
                     <div class="content__header info">
-                        <div class="content__header info--title">Lorem Ipsum</div>
+                        <div class="content__header info--title">{{ boardDetail.title }}</div>
                         <div class="content__header info__userInfo">
-                            <div class="content__header info__userInfo--name">USER</div>
-                            <div class="content__header info__userInfo--cartegory">STUDY |</div>
-                            <div class="content__header info__userInfo--time"> 2021.03.21</div>
+                            <div class="content__header info__userInfo--name">{{ boardDetail.write }}</div>
+                            <div class="content__header info__userInfo--cartegory">{{ boardDetail.pk }} |</div>
+                            <div class="content__header info__userInfo--time"> {{ boardDetail.created_at }}</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="content__main">
-                    TEST 
+                    {{ boardDetail.contents }}
                 </div>
 
                 <div class="content__footer">
