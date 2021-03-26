@@ -74,6 +74,10 @@ body, ul, li, a, hr, button, input, textarea{
 }
 
 @media screen and (min-width: 280px){
+    .container{
+        margin: 0px 5px;
+    }
+
     .header {
         height: auto;
         padding: 15px 15px;
@@ -133,6 +137,10 @@ body, ul, li, a, hr, button, input, textarea{
 }
 
 @media screen and (min-width: 1000px){
+    .container{
+        margin: 0px 50px;
+    }
+
     .signForm__wrapper{
         width: 65%;
     }
